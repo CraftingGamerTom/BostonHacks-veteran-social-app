@@ -1,4 +1,4 @@
-package hack.veteran_app.sdk.accessors;
+package hack.veteran_app.common.veteran_app_common.entities;
 
 public class User {
 	private String userName;

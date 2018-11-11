@@ -16,6 +16,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>hack.veteran_app.common</groupId>
+			<artifactId>veteran_app_common</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 		<!-- Handle talking to the REST API -->
 		<!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit -->
 		<dependency>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import hack.veteran_app.common.veteran_app_common.entities.Mission;
 import hack.veteran_app.sdk.backend.ExceptionHelper;
 import hack.veteran_app.sdk.backend.exceptions.InternalServerErrorException;
 import hack.veteran_app.sdk.backend.exceptions.NotFoundException;

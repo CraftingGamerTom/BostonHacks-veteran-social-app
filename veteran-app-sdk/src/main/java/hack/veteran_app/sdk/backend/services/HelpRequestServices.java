@@ -1,7 +1,6 @@
 package hack.veteran_app.sdk.backend.services;
 
-import hack.veteran_app.sdk.accessors.HelpRequest;
-
+import hack.veteran_app.common.veteran_app_common.entities.HelpRequest;
 import retrofit2.Call;
 
 import retrofit2.http.GET;
