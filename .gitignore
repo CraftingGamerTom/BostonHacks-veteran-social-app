@@ -1,3 +1,8 @@
+*.project
+**/.settings/*
+*.classpath
+/androidapp/.idea/caches/*
+
 # Built application files
 *.apk
 *.ap_
