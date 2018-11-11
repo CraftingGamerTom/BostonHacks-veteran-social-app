@@ -1,4 +1,4 @@
-package hack.veteran_app.sdk.veteran_app_sdk;
+package hack.veteran_app.common.veteran_app_common;
 
 /**
  * Hello world!
