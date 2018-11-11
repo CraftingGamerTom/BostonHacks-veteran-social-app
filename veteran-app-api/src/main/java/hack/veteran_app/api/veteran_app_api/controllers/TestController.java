@@ -18,9 +18,7 @@ public class TestController {
 
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String test() throws UnauthorizedException, NotFoundException, InternalServerErrorException,
-			hack.veteran_app.sdk.backend.exceptions.UnauthorizedException,
-			hack.veteran_app.sdk.backend.exceptions.NotFoundException,
-			hack.veteran_app.sdk.backend.exceptions.InternalServerErrorException {
+			UnauthorizedException, NotFoundException, InternalServerErrorException {
 		logger.debug("Reached Endpoint");
 
 		String result = "Hello World!";
