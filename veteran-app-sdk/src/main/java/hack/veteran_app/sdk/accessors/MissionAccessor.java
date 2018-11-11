@@ -18,9 +18,9 @@ public class MissionAccessor {
 	final Logger logger = Logger.getLogger(this.getClass());
 	static MissionServices service = RetrofitService.createService(MissionServices.class);
 
-	public static List<Mission> getMissionType(String uuId) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
+	public static List<Mission> getMissionUuid(String uuId) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
 		try {
-			retrofit2.Response<List<Mission>> response = service.getMissionType(uuId).execute();
+			retrofit2.Response<List<Mission>> response = service.getMissionUuid(uuId).execute();
 			if (!response.isSuccessful()) {
 				ExceptionHelper.throwErrorException(response.code(), response.errorBody());
 			}
@@ -31,22 +31,10 @@ public class MissionAccessor {
 		}
 	}
 	
-	public static List<Mission> getByMission(Mission mission) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
-		try {
-			retrofit2.Response<List<Mission>> response = service.getByMission(mission).execute();
-			if (!response.isSuccessful()) {
-				ExceptionHelper.throwErrorException(response.code(), response.errorBody());
-			}
-
-			return response.body();
-		} catch (IOException e) {
-			throw new InternalServerErrorException(e);
-		}
-	}
 	
-	public static List<Mission> postUserMession(Mission mission) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
+	public static List<Mission> putUserMession() throws UnauthorizedException, NotFoundException, InternalServerErrorException {
 		try {
-			retrofit2.Response<List<Mission>> response = service.getByMission(mission).execute();
+			retrofit2.Response<List<Mission>> response = service.putUserMession().execute();
 			if (!response.isSuccessful()) {
 				ExceptionHelper.throwErrorException(response.code(), response.errorBody());
 			}

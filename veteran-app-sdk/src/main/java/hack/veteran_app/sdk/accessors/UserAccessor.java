@@ -19,9 +19,9 @@ public class UserAccessor {
 	final Logger logger = Logger.getLogger(this.getClass());
 	static UserServices service = RetrofitService.createService(UserServices.class);
 
-	public static User getByUserName(String userName) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
+	public static User getByUser(String userName) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
 		try {
-			Response<User> response = service.getByUserName(userName).execute();
+			Response<User> response = service.getByUser(userName).execute();
 			if (!response.isSuccessful()) {
 				ExceptionHelper.throwErrorException(response.code(), response.errorBody());
 			}
@@ -32,9 +32,9 @@ public class UserAccessor {
 		}
 	}
 	
-	public static User getUserByEmail(String userName) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
+	public static User getUserByEmail(String email) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
 		try {
-			Response<User> response = service.getUserByEmail(userName).execute();
+			Response<User> response = service.getUserByEmail(email).execute();
 			if (!response.isSuccessful()) {
 				ExceptionHelper.throwErrorException(response.code(), response.errorBody());
 			}
@@ -47,7 +47,7 @@ public class UserAccessor {
 	
 	public static User putUserName(User user, String userName) throws UnauthorizedException, NotFoundException, InternalServerErrorException {
 		try {
-			Response<User> response = service.putUserName(user, userName).execute();
+			Response<User> response = service.putUser(user, userName).execute();
 			if (!response.isSuccessful()) {
 				ExceptionHelper.throwErrorException(response.code(), response.errorBody());
 			}

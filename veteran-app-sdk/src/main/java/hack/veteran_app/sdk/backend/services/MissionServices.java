@@ -4,19 +4,15 @@ import java.util.List;
 
 import hack.veteran_app.common.veteran_app_common.entities.Mission;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface MissionServices {
 	@GET("mission/{uuId}")
-	Call<List<Mission>> getMissionType(@Path("uuId") String mission);
+	Call<List<Mission>> getMissionUuid(@Path("uuId") String uuId);
 
-	@GET("user/{userName}/missions")
-	Call<List<Mission>> getByMission(@Path("mission") Mission mission);
-	
-	@POST("missions{type}")
-	public Call<Mission> postUserMession(@Path("userName") String userName, @Body Mission mission);
+	@PUT("missions")
+	public Call<List<Mission>> putUserMession();
 
 }

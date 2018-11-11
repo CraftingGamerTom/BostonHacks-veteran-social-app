@@ -21,10 +21,10 @@ public interface UserServices {
 	public Call<User> postUser(@Body User user);
 	
 	@GET("users/{userName}")
-	Call<User> getByUserName(@Path("userName") String userName);
+	Call<User> getByUser(@Path("userName") String userName);
 	
 	@PUT("users/{userName}")
-	Call<User> putUserName(@Body User user, String userName);	
+	Call<User> putUser(@Body User user, String userName);	
 	
 	@GET("user/{userName}/missions")
 	Call<List<Mission>> getUserMission(@Path("userName") String userName);
