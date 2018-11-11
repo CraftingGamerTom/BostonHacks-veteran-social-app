@@ -7,8 +7,11 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Mission {
 	private String typeOfMission;
-	private Time duration;
-	private String discription;
+	private Time duration; //Is this needed?
+	private String discription; //Is this needed?
+	private Long id;
+	private String uuid;
+	private String title;
 	
 	private static Map<Long, User> missionAc = new HashMap<Long, User>();
 	private static AtomicLong missionCounter = new AtomicLong();

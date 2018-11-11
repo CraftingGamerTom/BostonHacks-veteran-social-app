@@ -6,12 +6,14 @@ public class HelpRequest {
 	
 	private Date date;
 	private String typeOfHelp;
+	private String userName;
 	
 	/**
 	 * Creates a Help request
 	 * 
 	 */
-	public HelpRequest(Date date, String typeOfHelp) {
+	public HelpRequest(String userName, Date date, String typeOfHelp) {
+		this.userName = userName;
 		this.date = date;
 		this.typeOfHelp = typeOfHelp;
 	}
