@@ -23,6 +23,8 @@ public class Mission {
 		this.setDiscription(discription);
 	}
 	
+	public Mission() {}
+	
 	/**
 	 * Get the mission Accessor
 	 * @return the mission accessor

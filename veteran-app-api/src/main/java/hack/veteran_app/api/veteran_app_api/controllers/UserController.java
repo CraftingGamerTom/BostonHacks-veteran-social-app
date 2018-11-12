@@ -12,6 +12,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 
 import hack.veteran_app.api.veteran_app_api.spring.CollectionAccessor;
+import hack.veteran_app.common.veteran_app_common.entities.User;
 import hack.veteran_app.sdk.backend.exceptions.InternalServerErrorException;
 import hack.veteran_app.sdk.backend.exceptions.NotFoundException;
 import hack.veteran_app.sdk.backend.exceptions.UnauthorizedException;
@@ -38,10 +39,10 @@ public class UserController {
 		logger.debug("Reached Endpoint");
 		MongoCollection collection = CollectionAccessor.getMissionCollection();
 		
-		Bson filter = Filters.eq("username", username);
-		User user = collection.find(filter).first();
+		//Bson filter = Filters.eq("username", username);
+		// User user = collection.find(filter).first();
 
-		return result;
+		return new User();
 	}
 	
 }

@@ -27,6 +27,8 @@ public class User {
 		this.bio = new char[32];
 	}
 	
+	public User() {}
+	
 	/**
 	 * Return the user first name
 	 * @return the user first name

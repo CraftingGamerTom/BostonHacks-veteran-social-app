@@ -18,7 +18,7 @@ public class HelpRequest {
 		this.typeOfHelp = typeOfHelp;
 	}
 	
-	
+	public HelpRequest() {}
 
 	/**
 	 * @return the date
