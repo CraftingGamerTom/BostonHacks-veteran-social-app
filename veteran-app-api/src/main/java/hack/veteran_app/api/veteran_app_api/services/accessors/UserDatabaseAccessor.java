@@ -13,14 +13,19 @@ import com.mongodb.client.model.Filters;
 import hack.veteran_app.api.veteran_app_api.services.mappers.UserMapper;
 import hack.veteran_app.common.veteran_app_common.entities.User;
 import hack.veteran_app.common.veteran_app_common.entities.lists.UserList;
+import hack.veteran_app.sdk.backend.exceptions.NotFoundException;
 
 public class UserDatabaseAccessor {
 
-	public static User getByUsername(String username) {
+	public static User getByUsername(String username) throws NotFoundException {
 		MongoCollection<Document> collection = CollectionAccessor.getUserCollection();
 		Bson filter = Filters.eq("username", username);
 		Document object = collection.find(filter).first();
-		return UserMapper.map(object);
+		if (object != null) {
+			return UserMapper.map(object);
+		} else {
+			throw new NotFoundException();
+		}
 	}
 
 	public static UserList getMany(int limit) {

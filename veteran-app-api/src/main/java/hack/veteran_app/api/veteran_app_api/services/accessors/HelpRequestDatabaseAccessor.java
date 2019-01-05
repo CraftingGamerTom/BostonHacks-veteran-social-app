@@ -16,18 +16,23 @@ import hack.veteran_app.common.veteran_app_common.entities.HelpRequest;
 import hack.veteran_app.common.veteran_app_common.entities.User;
 import hack.veteran_app.common.veteran_app_common.entities.lists.HelpRequestList;
 import hack.veteran_app.common.veteran_app_common.entities.lists.UserList;
+import hack.veteran_app.sdk.backend.exceptions.NotFoundException;
 
 public class HelpRequestDatabaseAccessor {
 
-	public static HelpRequestList getByUsername(String username) {
+	public static HelpRequestList getByUsername(String username) throws NotFoundException {
 		MongoCollection<Document> collection = CollectionAccessor.getHelpRequestCollection();
 		FindIterable<Document> object = collection.find(Filters.eq("username", username));
 
 		List<HelpRequest> list = new ArrayList<HelpRequest>();
-		for (Document doc : object) {
-			list.add(HelpRequestMapper.map(doc));
+		if (object != null) {
+			for (Document doc : object) {
+				list.add(HelpRequestMapper.map(doc));
+			}
+			return new HelpRequestList(list);
+		} else {
+			throw new NotFoundException();
 		}
-		return new HelpRequestList(list);
 	}
 
 	public static HelpRequestList getMany(int limit) {
