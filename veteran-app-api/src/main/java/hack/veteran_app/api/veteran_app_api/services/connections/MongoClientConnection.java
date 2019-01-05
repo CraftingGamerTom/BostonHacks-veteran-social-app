@@ -7,6 +7,7 @@ package hack.veteran_app.api.veteran_app_api.services.connections;
 import org.apache.log4j.Logger;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 
 public class MongoClientConnection {
 
@@ -21,7 +22,9 @@ public class MongoClientConnection {
 	public static MongoClient getInstance() {
 		if (client == null) {
 			logger.info("Creating Mongo Client.");
-			client = new MongoClient("localhost", 27017);
+			String uri = "mongodb://hackathon:haax@localhost:25560/hackathonDatabase?authSource=admin";
+			MongoClientURI mongoClientURI = new MongoClientURI(uri);
+			client = new MongoClient(mongoClientURI);
 			logger.info("Mongo Client Created.");
 		}
 		return client;

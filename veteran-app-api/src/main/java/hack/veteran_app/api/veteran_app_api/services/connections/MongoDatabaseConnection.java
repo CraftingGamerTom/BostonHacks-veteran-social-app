@@ -28,7 +28,7 @@ public class MongoDatabaseConnection {
 			logger.info("Connecting to Mongo Database");
 
 			MongoClient client = MongoClientConnection.getInstance();
-			database = client.getDatabase("veteranDatabase");
+			database = client.getDatabase("hackathonDatabase");
 		}
 		return database;
 	}
