@@ -26,14 +26,14 @@
 		<dependency>
 			<groupId>com.squareup.retrofit2</groupId>
 			<artifactId>retrofit</artifactId>
-			<version>2.4.0</version>
+			<version>2.5.0</version>
 		</dependency>
 		<!-- Handle Serialization from REST API -->
 		<!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson -->
 		<dependency>
 			<groupId>com.squareup.retrofit2</groupId>
 			<artifactId>converter-jackson</artifactId>
-			<version>2.4.0</version>
+			<version>2.5.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 		<dependency>

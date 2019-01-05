@@ -1,4 +1,4 @@
-package hack.veteran_app.api.veteran_app_api;
+package hack.veteran_app.api.veteran_app_api.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

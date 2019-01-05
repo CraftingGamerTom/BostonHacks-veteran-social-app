@@ -1,52 +1,48 @@
 package hack.veteran_app.common.veteran_app_common.entities;
 
+import java.time.ZonedDateTime;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class HelpRequest {
-	
-	private Date date;
-	private String typeOfHelp;
-	private String userName;
-	
+
+	private String username;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+	private ZonedDateTime date;
+
 	/**
 	 * Creates a Help request
 	 * 
 	 */
-	public HelpRequest(String userName, Date date, String typeOfHelp) {
-		this.userName = userName;
+	public HelpRequest(String username, ZonedDateTime date) {
+		this.username = username;
 		this.date = date;
-		this.typeOfHelp = typeOfHelp;
 	}
-	
-	public HelpRequest() {}
+
+	public HelpRequest() {
+	}
 
 	/**
 	 * @return the date
 	 */
-	public Date getDate() {
+	public ZonedDateTime getDate() {
 		return date;
 	}
 
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(Date date) {
+	public void setDate(ZonedDateTime date) {
 		this.date = date;
 	}
 
-	/**
-	 * @return the typeOfHelp
-	 */
-	public String getTypeOfHelp() {
-		return typeOfHelp;
+	public String getUsername() {
+		return username;
 	}
 
-	/**
-	 * @param typeOfHelp the typeOfHelp to set
-	 */
-	public void setTypeOfHelp(String typeOfHelp) {
-		this.typeOfHelp = typeOfHelp;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	
 
 }

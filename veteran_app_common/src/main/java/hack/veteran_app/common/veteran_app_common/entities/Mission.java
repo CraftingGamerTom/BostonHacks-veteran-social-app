@@ -1,80 +1,52 @@
 package hack.veteran_app.common.veteran_app_common.entities;
 
-import java.sql.Time;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
-
 public class Mission {
-	private String typeOfMission;
-	private Time duration; //Is this needed?
-	private String discription; //Is this needed?
 	private Long id;
 	private String uuid;
 	private String title;
-	
-	private static Map<Long, User> missionAc = new HashMap<Long, User>();
-	private static AtomicLong missionCounter = new AtomicLong();
-	
-	
-	public Mission(String typeOfMission, Time duration, String description) {
-		this.setTypeOfMission(typeOfMission);
-		this.setDuration(duration);
-		this.setDiscription(discription);
+	private String description;
+
+	public Mission() {
 	}
-	
-	public Mission() {}
-	
-	/**
-	 * Get the mission Accessor
-	 * @return the mission accessor
-	 */
-	public static Map<Long, User> getMissionAccessor() {
-		return missionAc;
+
+	public Mission(Long id, String uuid, String title, String description) {
+		super();
+		this.id = id;
+		this.uuid = uuid;
+		this.title = title;
+		this.description = description;
 	}
-	
-	/**
-	 * Get the mission counter
-	 * @return the mission counter
-	 */
-	public static AtomicLong getMissionCounter() {
-		return missionCounter;
+
+	public Long getId() {
+		return id;
 	}
-	/**
-	 * @return the typeOfMission
-	 */
-	public String getTypeOfMission() {
-		return typeOfMission;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
-	/**
-	 * @param typeOfMission the typeOfMission to set
-	 */
-	public void setTypeOfMission(String typeOfMission) {
-		this.typeOfMission = typeOfMission;
+
+	public String getUuid() {
+		return uuid;
 	}
-	/**
-	 * @return the duration
-	 */
-	public Time getDuration() {
-		return duration;
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
-	/**
-	 * @param duration the duration to set
-	 */
-	public void setDuration(Time duration) {
-		this.duration = duration;
+
+	public String getTitle() {
+		return title;
 	}
-	/**
-	 * @return the discription
-	 */
-	public String getDiscription() {
-		return discription;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	/**
-	 * @param discription the discription to set
-	 */
-	public void setDiscription(String discription) {
-		this.discription = discription;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

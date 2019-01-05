@@ -2,7 +2,7 @@
  * Copyright (c) 2018 Thomas Rokicki
  */
 
-package hack.veteran_app.api.veteran_app_api.spring;
+package hack.veteran_app.api.veteran_app_api.services.connections;
 
 import org.apache.log4j.Logger;
 

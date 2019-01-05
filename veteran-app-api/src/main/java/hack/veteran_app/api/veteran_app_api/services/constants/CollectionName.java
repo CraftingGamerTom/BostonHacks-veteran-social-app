@@ -1,8 +1,8 @@
-package hack.veteran_app.api.veteran_app_api.spring;
+package hack.veteran_app.api.veteran_app_api.services.constants;
 
 public enum CollectionName {
 
-	USERS("user_collection"), MISSIONS("mission_collection"), HELP_REQUESTS("help_requests");
+	USERS("users"), MISSIONS("missions"), HELP_REQUESTS("helpRequests");
 
 	private String collectionName;
 
