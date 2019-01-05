@@ -8,6 +8,7 @@ import org.bson.conversions.Bson;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import hack.veteran_app.api.veteran_app_api.services.accessors.UserDatabaseAccessor;
 import hack.veteran_app.common.veteran_app_common.entities.Mission;
@@ -16,9 +17,12 @@ import hack.veteran_app.common.veteran_app_common.entities.lists.UserList;
 import hack.veteran_app.sdk.backend.exceptions.InternalServerErrorException;
 import hack.veteran_app.sdk.backend.exceptions.NotFoundException;
 import hack.veteran_app.sdk.backend.exceptions.UnauthorizedException;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
+@RestController
+@Api(value = "User", tags = { "User" })
 public class UserController {
 
 	final Logger logger = Logger.getLogger(this.getClass());

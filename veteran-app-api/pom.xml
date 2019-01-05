@@ -25,6 +25,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>hack.veteran-app.sdk</groupId>
+			<artifactId>veteran-app-sdk</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
@@ -34,9 +39,8 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>hack.veteran-app.sdk</groupId>
-			<artifactId>veteran-app-sdk</artifactId>
-			<version>0.0.1</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
 		<dependency>
