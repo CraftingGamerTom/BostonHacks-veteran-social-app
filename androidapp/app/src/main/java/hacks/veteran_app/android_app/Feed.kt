@@ -4,13 +4,22 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_feed.*
+import hack.veteran_app.common.veteran_app_common.entities.Mission
 
 class Feed : AppCompatActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        val mission: Mission
+        mission = Mission()
+        mission.title = "testTitle"
+        mission.description = "testDescription"
+
+
         when (item.itemId) {
+
             R.id.navigation_home -> {
-                message.setText(R.string.title_home)
+
+                message.setText(mission.title)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {

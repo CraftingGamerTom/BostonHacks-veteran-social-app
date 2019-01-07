@@ -20,9 +20,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
-
-
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -34,5 +33,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api fileTree(include: '*.jar', dir: 'libs')
-    runtimeOnly 'hack.veteran-app:veteran-app-sdk:0.0.1'
+    implementation files('libs/veteran_app_sdk-0.0.1.jar')
+    implementation files('libs/veteran_app_common-0.0.1.jar')
 }
